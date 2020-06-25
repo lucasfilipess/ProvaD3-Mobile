@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>MeusDados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let pessoa of pessoa">
+      <ion-card-header>
+        <h2>{{pessoa.nome}}</h2>
+        <h3>{{pessoa.id}}</h3>
+      </ion-card-header>
+      <ion-card-content>{{pessoa.idade}}</ion-card-content>
+      <ion-card-content>{{pessoa.saudeMental}}</ion-card-content>
+      <ion-card-content>{{pessoa.racaCor}}</ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

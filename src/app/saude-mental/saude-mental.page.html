@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>SaudeMental</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form *ngFor="let pessoa of pessoa">
+    <ion-item>
+      <ion-label>Id</ion-label>
+      <ion-input type="number" name="id" [(ngModel)]="pessoa.id"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nome</ion-label>
+      <ion-input type="text" name="nome" [(ngModel)]="pessoa.nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Idade</ion-label>
+      <ion-input
+        type="number"
+        name="idade"
+        [(ngModel)]="pessoa.idade"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Saude Mental</ion-label>
+      <ion-select
+        name="saudeMental"
+        [(ngModel)]="pessoa.saudeMental"
+        value="saudeMental"
+        okText="Ok"
+        cancelText="Cancelar"
+      >
+        <ion-select-option value="pessima">1 - péssima</ion-select-option>
+        <ion-select-option value="ruim">2 - ruim</ion-select-option>
+        <ion-select-option value="normal">3 - normal</ion-select-option>
+        <ion-select-option value="boa">4 - boa</ion-select-option>
+        <ion-select-option value="otima">5 - otima</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Raça</ion-label>
+      <ion-input
+        type="text"
+        name="racaCor"
+        [(ngModel)]="pessoa.racaCor"
+      ></ion-input>
+    </ion-item>
+  </form>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <ion-button
+          (click)="getPessoa(pessoa)"
+          expand="full"
+          mode="ios"
+          class="btn-primary"
+        >
+          Buscar por Id
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <ion-button
+          (click)="getPessoaId(pessoa)"
+          expand="full"
+          mode="ios"
+          class="btn-primary"
+        >
+          Buscar por Raça/Cor
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
